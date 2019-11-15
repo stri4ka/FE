@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("media.scss");
 * {
   margin: 0;
   padding: 0;
@@ -181,7 +182,56 @@ nav a:hover {
   color: #69b9ff;
 }
 
-nav a, #checkbox1, .toggle {
+.toggle {
+  background: #192024;
+  display: block;
+  height: 2.5px;
+  position: relative;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  width: 18px;
+}
+
+.toggle::before, .toggle::after {
+  background: #192024;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.toggle::before {
+  top: 5px;
+}
+
+.toggle::after {
+  top: -5px;
+}
+
+#checkbox1:checked ~ .menu-icon .toggle {
+  background: transparent;
+}
+
+#checkbox1:checked ~ .menu-icon .toggle::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#checkbox1:checked ~ .menu-icon .toggle::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#checkbox1:checked ~ .menu-icon:not(.steps) .toggle::before,
+#checkbox1:checked ~ .menu-icon:not(.steps) .toggle::before {
+  top: -4px;
+}
+
+nav a,
+#checkbox1 {
   font-size: 16px;
   color: #676770;
   width: 100%;
@@ -206,7 +256,8 @@ ul ul > li {
   padding: 5px 8px;
 }
 
-#checkbox1, .toggle {
+#checkbox1,
+.toggle {
   display: none;
 }
 
@@ -582,15 +633,19 @@ ul ul > li {
   h2 {
     line-height: normal;
   }
-  header {
+  .header-container {
     position: static;
-  }
-  .logo {
-    text-align: center;
-    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 10px;
   }
   nav {
     width: 100%;
+    position: relative;
   }
   nav ul {
     -webkit-box-orient: vertical;
@@ -633,9 +688,11 @@ ul ul > li {
     display: block;
     text-align: center;
     cursor: pointer;
-    width: 100%;
     padding: 0;
     margin: 0;
+    position: absolute;
+    top: -35px;
+    right: 0;
   }
   .toggle:hover {
     background: #ffffff;
@@ -652,8 +709,9 @@ ul ul > li {
     margin-top: 10px;
   }
   .banner .banner__heading {
-    font-size: 45px;
+    font-size: 40px;
     padding: 0;
+    line-height: 1;
   }
   .banner .banner__sub-heading {
     font-size: 20px;
@@ -676,6 +734,105 @@ ul ul > li {
   }
   .services__item img {
     width: 100%;
+  }
+  .copyright {
+    padding: 15px 0;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 960px) {
+  .header-container {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 10px;
+  }
+  nav {
+    width: 100%;
+    position: relative;
+  }
+  nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav > ul > li {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    width: 100%;
+    padding: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  ul ul {
+    position: relative;
+  }
+  ul ul > li {
+    padding: 0;
+  }
+  nav a {
+    padding: 15px 0;
+  }
+  nav a:hover {
+    background: #69b9ff;
+    color: #ffffff;
+  }
+  .toggle {
+    color: #192024;
+    clear: both;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -35px;
+    right: 0;
+  }
+  .toggle:hover {
+    background: #ffffff;
+  }
+  #checkbox1:checked + label + ul.menu > li {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  }
+  .banner {
+    padding: 120px 0;
+  }
+  .banner .banner__heading {
+    padding-bottom: 0;
+  }
+  .section__heading {
+    margin-bottom: 30px;
+  }
+  .introduction__wrapper {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .services .services__wrapper .services__item {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+  .footer__wrapper .footer__item {
+    width: 33.3%;
+    padding: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .copyright {
     padding: 15px 0;
