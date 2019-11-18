@@ -18,7 +18,8 @@ h1 {
   left: 14px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: 100;
 }
 
@@ -39,20 +40,18 @@ nav h2 {
 
 nav ul {
   width: 80%;
-  margin: 40px auto;
+  margin: 50px auto;
   list-style-type: none;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[9];
-      grid-template-columns: repeat(9, 1fr);
-  -ms-grid-rows: (1fr)[10];
-      grid-template-rows: repeat(10, 1fr);
+  -ms-grid-columns: (minmax(100px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 3vw;
 }
 
 nav ul li {
-  width: 6.25vw;
-  height: 6.25vw;
+  width: 100px;
+  height: 100px;
   padding: 15px;
   display: -ms-grid;
   display: grid;
@@ -62,8 +61,8 @@ nav ul li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 1px, 0 2px, 0 3px, 0 4px, 0 5px, 0 -1px #008000, 0 -2px #008000, 0 -3px #008000, 0 -4px #008000, 0 -5px #008000, 1px 0 #0000ff, 2px 0 #0000ff, 3px 0 #0000ff, 4px 0 #0000ff,  5px 0 #0000ff, -1px 0 #ffff00, -2px 0 #ffff00, -3px 0 #ffff00, -4px 0 #ffff00, -5px 0 #ffff00;
-          box-shadow: 0 1px, 0 2px, 0 3px, 0 4px, 0 5px, 0 -1px #008000, 0 -2px #008000, 0 -3px #008000, 0 -4px #008000, 0 -5px #008000, 1px 0 #0000ff, 2px 0 #0000ff, 3px 0 #0000ff, 4px 0 #0000ff,  5px 0 #0000ff, -1px 0 #ffff00, -2px 0 #ffff00, -3px 0 #ffff00, -4px 0 #ffff00, -5px 0 #ffff00;
+  -webkit-box-shadow: 0 1px, 0 2px, 0 3px, 0 4px, 0 5px, 0 -1px #008000, 0 -2px #008000, 0 -3px #008000, 0 -4px #008000, 0 -5px #008000, 1px 0 #0000ff, 2px 0 #0000ff, 3px 0 #0000ff, 4px 0 #0000ff, 5px 0 #0000ff, -1px 0 #ffff00, -2px 0 #ffff00, -3px 0 #ffff00, -4px 0 #ffff00, -5px 0 #ffff00;
+          box-shadow: 0 1px, 0 2px, 0 3px, 0 4px, 0 5px, 0 -1px #008000, 0 -2px #008000, 0 -3px #008000, 0 -4px #008000, 0 -5px #008000, 1px 0 #0000ff, 2px 0 #0000ff, 3px 0 #0000ff, 4px 0 #0000ff, 5px 0 #0000ff, -1px 0 #ffff00, -2px 0 #ffff00, -3px 0 #ffff00, -4px 0 #ffff00, -5px 0 #ffff00;
   -webkit-animation: rotate linear 5s infinite;
           animation: rotate linear 5s infinite;
 }
@@ -148,18 +147,25 @@ nav ul li:nth-child(5n + 5) {
 }
 
 article {
-  padding: 0 200px;
+  display: -ms-grid;
+  display: grid;
+  padding: 40px;
+  -ms-grid-columns: (minmax(30%, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
 }
 
-header, section {
+header,
+section {
   margin: 20px;
 }
 
-header h2, section h2 {
+header h2,
+section h2 {
   padding-bottom: 20px;
 }
 
-section a, footer a {
+section a,
+footer a {
   color: #ffffff;
   background-color: #808080;
 }
