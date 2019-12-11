@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Exocet';
+    src: url('ExocetHeavy.woff2') format('woff2'),
+        url('ExocetHeavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Exocet';
+    src: url('ExocetLight.woff2') format('woff2'),
+        url('ExocetLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
