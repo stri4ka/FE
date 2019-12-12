@@ -1,2 +1,2 @@
 # FE
-[https://stri4ka.github.io/FE](https://stri4ka.github.io/FE/blob/tasks/index.html)
+[https://stri4ka.github.io/FE](https://stri4ka.github.io/FE/index.html)
