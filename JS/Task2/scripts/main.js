@@ -1,3 +1,4 @@
+//Sergey solution
 const rand = () => Math.floor(Math.random() * 16);
 const print = function (length) {
     return function (value) {

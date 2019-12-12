@@ -1,3 +1,5 @@
+//Sergey solution
+
 function Fibo() {
     const f = (function * () {
       const A = [ 0, 1 ];
