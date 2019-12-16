@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess number</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="" id="playerTurn">
+        <p>Мы загадали случайное число от 1 до 100. Попробуйте его угадать.</p>
+        <div>
+            <label for="inputGuess">Введите ваше число: </label>
+            <input type="text" id="inputGuess">
+            <button id="btnGuess">Отправить</button>
+        </div>
+    </div>
+    <div class="hidden" id="aiTurn">
+        <p>А сейчас компьютер попытается угадать загаданное вами число от 1 до 100.</p>
+        <p>Это число: <span id="aiNumber">50</span>?</p>
+        <div>
+            <button id="btnSmaller">Меньше</button>
+            <button id="btnBigger">Больше</button>
+            <button id="btnCorrect">Верно!</button>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
