@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  background: #000000;
+  color: #808080;
+  font: 1em Corbel, sans-serif;
+}
+
+h1 {
+  position: absolute;
+  left: 14px;
+}
+
+h1,
+h2 {
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  font-size: 13px;
+  padding: 0;
+  line-height: normal;
+}
+
+nav h2 {
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 136px;
+  left: -35px;
+}
+
+nav ul {
+  width: 80%;
+  margin: 50px auto;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 3vw;
+}
+
+nav ul li {
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px, 0 2px, 0 3px, 0 4px, 0 5px, 0 -1px #008000, 0 -2px #008000,
+    0 -3px #008000, 0 -4px #008000, 0 -5px #008000, 1px 0 #0000ff, 2px 0 #0000ff, 3px 0 #0000ff, 4px 0 #0000ff,
+    5px 0 #0000ff, -1px 0 #ffff00, -2px 0 #ffff00, -3px 0 #ffff00, -4px 0 #ffff00, -5px 0 #ffff00;
+  animation: rotate linear 5s infinite;
+
+  & a:first-child {
+    font-weight: 900;
+  }
+}
+
+nav ul li:nth-child(even) {
+  background: #000000;
+  animation-delay: 1s;
+
+  & a {
+    color: #ffffff;
+  }
+}
+
+nav ul li:nth-child(odd) {
+  background: #ffffff;
+  z-index: 1;
+  position: relative;
+
+  & a {
+    color: #000000;
+  }
+}
+
+nav ul li:nth-child(5n + 1) {
+  animation: rotate linear 5s infinite;
+}
+
+nav ul li:nth-child(5n + 2) {
+  animation-delay: 0.25s;
+}
+
+nav ul li:nth-child(5n + 3) {
+  animation-delay: 0.5s;
+}
+
+nav ul li:nth-child(5n + 4) {
+  animation-delay: 0.75s;
+}
+
+nav ul li:nth-child(5n + 5) {
+
+  animation-delay: 1s;
+}
+
+
+@keyframes rotate {
+  10% {
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform: rotate(45deg);
+  }
+
+  75% {
+    transform: rotate(0);
+  }
+}
+
+article {
+  display: grid;
+  padding: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+
+}
+
+header,
+section {
+  margin: 20px;
+
+  h2 {
+    padding-bottom: 20px;
+  }
+}
+
+section,
+footer {
+  a {
+    color: #ffffff;
+    background-color: #808080;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 13px;
+}
