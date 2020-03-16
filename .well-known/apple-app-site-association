@@ -3,9 +3,10 @@
     "apps": [],
     "details": [{
       "appID": "7468SSZK9M.com.TextPsswordSave",
-      "paths": [
-        "*"
-      ]
+      "components": [{
+        "/": "/FE/*",
+        "comment": "Matches any URL whose path starts with /FE/"
+      }]
     }]
   }
 }
